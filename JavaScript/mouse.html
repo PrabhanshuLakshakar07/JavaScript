@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function fun1(){ 
+            document.getElementById("demo").style.backgroundColor="cyan"
+            document.getElementById("demo").innerHTML="this is mouseover"
+        }
+        function fun2(){
+            document.getElementById("id2").style.visibility="hidden";
+            document.getElementById("id3").style.visibility="hidden";
+            
+        }
+        function fun3(){
+            document.getElementById("demo").style.backgroundColor="white"
+            document.getElementById("demo").innerHTML="this is mouseover"
+        }
+    </script>
+    
+</head>
+<body onload="fun2()">
+    <img src="cloud.png" height="200" width="300" onmouseover="fun1()" onmouseout="fun3()"/>
+    <br/>
+    <p id="demo"></p>
+    <br/>
+    <img src="AI.png" id="id2" height="200" width="300" />
+    <img src="cybersecurty.png" id="id3" height="200" width="300"/>
+    <input type="button" id="id4" height="20" width="300" value="Show Images" >
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head style="color: aquamarine;">
+ 
+    <script style="color: aqua;" >
+        var str ="Prabhanshu";
+        document.write(str.length);
+        document.write("<br/>");
+        document.write("Uppercase: ---" + str.toUpperCase());
+        document.write("<br/>");
+        document.write("Lowercase: ---" + str.toLowerCase());
+        document.write("<br/>");
+        document.write("Character at index 3: --- " + str.charAt(3));
+        document.write("<br/>");
+        document.write("Index of 'h': ---" + str.indexOf("h"));
+        document.write("<br/>");
+        document.write("Last index of 'h': ---" + str.lastIndexOf("h"));
+        document.write("<br/>");
+        document.write("Slice (2,6): ---" + str.slice(2,6));
+        document.write("<br/>");
+        document.write("Substring (2,6): ---" + str.substring(2,6));
+        document.write("<br/>");
+        document.write("Replace 'Prabhanshu' with 'John':  ---     " + str.replace("Prabhanshu", "John"));
+        document.write("<br/>");
+        document.write("Replace first 'h' with 'H':  ---     " + str.replace("h", "H"));
+        document.write("<br/>");
+        document.write("Replace all 'h' with 'H': ---         " + str.replace(/h/g, "H"));
+        document.write("<br/>");
+        document.write("Split by 'h':       ---   " + str.split("h"));
+        document.write("<br/>");
+        document.write("Split by 'h' (max 1 split): ---        " + str.split("h", 1)); // will text into array
+        document.write("<br/>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
