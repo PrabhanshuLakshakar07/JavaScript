@@ -4,20 +4,24 @@
     <script>
         var d=new Date();
        
-        document.writeln(d);
        
-         var h=d.getMonth();
-         var g=d.getFullYear();
-         var e=d.getMinutes();
-         var m=d.getMonth();
-         var r=d.setMilliseconds();
-         document.writeln(h);
-         
-          document.writeln(g);
-           document.writeln(r);
-           document.writeln(e );
-            document.writeln(m);
+         var d1=d.getDate();
+         var t=d.getTime()
+         var m=d.getMonth()
+         var h=d.getHours()
+         var y=d.getFullYear()
 
+         var H=d.getHours()
+         var M1=d.getMonth()
+         var S=d.getSeconds()
+         
+            document.writeln("day->"+ d1);
+           
+            document.writeln("month->" + (m+1));
+            document.writeln("Year is ->"+ y);
+            document.writeln("hour->" + h);
+            document.writeln("time ->" + t +"</br>" );
+            document.writeln(h ,":" ,M1 ,":",S );
     </script>
 </head>
 <body>
