@@ -1,195 +1,187 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
-    <style>
-        #ErrorFirst {
-            color: red;
-        }
-        #ErrorLast {
-             color: red;
-         }
-        #ErrorMiddle {
-            color: red;
-        }
-        #ErrorEno {
-            color: red;
-        }
+    <title>Form Validation</title>
 
+    <style>
+        #ErrorFirst, #ErrorMiddle, #ErrorLast,
+        #ErrorEno, #ErrorAge, #ErrorEmail, #ErrorPass {
+            color: red;
+        }
     </style>
+
     <script>
 
-
-
-function Ckeck1()
-{
-    fname=document.getElementById("txtFirst").value;
-    if(fname=="")
-    {
-        //alert("Please enter first Name");
-        document.getElementById("ErrorFirst").innerHTML="Please enter first Name";
-        document.getElementById("txtFirst").focus();
-        return false;
-    }
-    else
-    {
-        document.getElementById("ErrorFirst").innerHTML="";
-    }
-    mname=document.getElementById("txtMiddle").value;
-    if(mname=="")
-    {
-        //alert("Please enter first Name");
-        document.getElementById("ErrorMiddle").innerHTML="Please enter Middle Name";
-        document.getElementById("txtMiddle").focus();
-        return false;
-    }
-    else
-    {
-        document.getElementById("ErrorMiddle").innerHTML="";
-    }
-    lname=document.getElementById("txtLast").value;
-
-    if(lname=="")
-    {
-        //alert("Please enter first Name");
-        document.getElementById("ErrorLast").innerHTML="Please enter Last Name";
-        document.getElementById("txtLast").focus();
-        return false;
-    }
-    else
-    {
-        document.getElementById("ErrorLast").innerHTML="";
-    }
-    empNo=document.getElementById("txtEid").value;
-    if(empNo=="")
-    {
-        //alert("Please enter first Name");
-        document.getElementById("ErrorEno").innerHTML="Please enter Employee id";
-        document.getElementById("txtEid").focus();
-        return false;
-    }
-    else
-    {
-        document.getElementById("ErrorEno").innerHTML="";
-    }
-}
+        function validateForm()
+        {
+            if(!fun1() || !fun2() || !fun3() || !fun5() || !fun6() || !fun7() || !fun4())
+            {
+                return false;
+            }
+            return true;
+        }
 
         function fun1()
         {
-            fname=document.getElementById("txtFirst").value;
-            if(fname=="")
+            var fname = document.getElementById("txtFirst").value;
+            if(fname == "")
             {
-                //alert("Please enter first Name");
-                document.getElementById("ErrorFirst").innerHTML="Please enter first Name";
-                document.getElementById("txtFirst").focus();
+                document.getElementById("ErrorFirst").innerHTML = "Please enter First Name";
+                return false;
             }
-            else
-            {
-                document.getElementById("ErrorFirst").innerHTML="";
-            }
-
+            document.getElementById("ErrorFirst").innerHTML = "";
+            return true;
         }
 
         function fun2()
         {
-            mname=document.getElementById("txtMiddle").value;
-            if(mname=="")
+            var mname = document.getElementById("txtMiddle").value;
+            if(mname == "")
             {
-                //alert("Please enter first Name");
-                document.getElementById("ErrorMiddle").innerHTML="Please enter Middle Name";
-                document.getElementById("txtMiddle").focus();
+                document.getElementById("ErrorMiddle").innerHTML = "Please enter Middle Name";
+                return false;
             }
-            else
-            {
-                document.getElementById("ErrorMiddle").innerHTML="";
-            }
+            document.getElementById("ErrorMiddle").innerHTML = "";
+            return true;
         }
+
         function fun3()
         {
-            lname=document.getElementById("txtLast").value;
-
-            if(lname=="")
+            var lname = document.getElementById("txtLast").value;
+            if(lname == "")
             {
-                //alert("Please enter first Name");
-                document.getElementById("ErrorLast").innerHTML="Please enter Last Name";
-                document.getElementById("txtLast").focus();
+                document.getElementById("ErrorLast").innerHTML = "Please enter Last Name";
+                return false;
             }
-            else
-            {
-                document.getElementById("ErrorLast").innerHTML="";
-            }
+            document.getElementById("ErrorLast").innerHTML = "";
+            return true;
         }
+
         function fun4()
         {
-            empNo=document.getElementById("txtEid").value;
-            if(empNo=="")
+            var empNo = document.getElementById("txtEid").value;
+            if(empNo == "")
             {
-                //alert("Please enter first Name");
-                document.getElementById("ErrorEno").innerHTML="Please enter Employee id";
-                document.getElementById("txtEid").focus();
+                document.getElementById("ErrorEno").innerHTML = "Please enter Employee ID";
+                return false;
+            }
+            document.getElementById("ErrorEno").innerHTML = "";
+            return true;
+        }
+
+        function fun5()
+        {
+            var age = document.getElementById("txtAge").value;
+
+            if(age == "" || isNaN(age))
+            {
+                document.getElementById("ErrorAge").innerHTML = "Please enter valid age";
+                return false;
+            }
+            else if(age < 18)
+            {
+                document.getElementById("ErrorAge").innerHTML = "You are not eligible for vote";
+                return false;
             }
             else
             {
-                document.getElementById("ErrorEno").innerHTML="";
+                document.getElementById("ErrorAge").innerHTML = "You are eligible for vote";
+                return true;
             }
         }
+
+        function fun6()
+        {
+            var email = document.getElementById("txtEmail").value;
+            var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if(!pattern.test(email))
+            {
+                document.getElementById("ErrorEmail").innerHTML = "Please enter valid email";
+                return false;
+            }
+            document.getElementById("ErrorEmail").innerHTML = "";
+            return true;
+        }
+
+        function fun7()
+        {
+            var pass = document.getElementById("txtPassword").value;
+
+            if(pass == "")
+            {
+                document.getElementById("ErrorPass").innerHTML = "Please enter password";
+                return false;
+            }
+            else if(pass.length < 6)
+            {
+                document.getElementById("ErrorPass").innerHTML = "Password must be at least 6 characters";
+                return false;
+            }
+
+            document.getElementById("ErrorPass").innerHTML = "";
+            return true;
+        }
+
     </script>
 </head>
-<body>
-<form method="post" action="result.asp" onsubmit="return Ckeck1()">
-    <table style="border: 10px; background-color: rgb(148, 251, 237); border-radius: 20px; ">
+
+<body style="align-content: center; height: 250; width: 300;">
+
+<form onsubmit="return validateForm()" style="align-content: center; height: 250; width: 300;" >
+    <table style=" padding-left: 20; box-shadow: 100;  background-color: rgb(148,251,237); height: 500px; width: 600px;  border-radius:20px; padding:10px; align-items: center;">
+        
         <tr>
-            <td>
-                First Name:
-            </td>
-            <td><input type="text" id="txtFirst" onblur="fun1()">
-            </td>
-            <td>
-                <div id="ErrorFirst"></div>
-            </td>
+            <td>First Name:</td>
+            <td><input type="text" id="txtFirst" onblur="fun1()"></td>
+            <td><div id="ErrorFirst"></div></td>
         </tr>
+
         <tr>
-            <td>
-                Middle Name:
-             </td>
-            <td><input type="text" id="txtMiddle" onblur="fun2()">
-            </td>
-            <td>
-                <div id="ErrorMiddle"></div>
-            </td>
+            <td>Middle Name:</td>
+            <td><input type="text" id="txtMiddle" onblur="fun2()"></td>
+            <td><div id="ErrorMiddle"></div></td>
         </tr>
+
         <tr>
-            <td>
-                Last Name:
-            </td>
-            <td><input type="text" id="txtLast" onblur="fun3()">
-            </td>
-            <td>
-                <div id="ErrorLast"></div>
-            </td>
+            <td>Last Name:</td>
+            <td><input type="text" id="txtLast" onblur="fun3()"></td>
+            <td><div id="ErrorLast"></div></td>
         </tr>
+
         <tr>
-            <td>
-                Emp Id :
-            </td>
-            <td><input type="text" id="txtEid" onblur="fun4()">
-            </td>
-            <td>
-                <div id="ErrorEno" ></div>
-            </td>
+            <td>Age:</td>
+            <td><input type="text" id="txtAge" onblur="fun5()"></td>
+            <td><div id="ErrorAge"></div></td>
         </tr>
+
+        <tr>
+            <td>Email:</td>
+            <td><input type="text" id="txtEmail" onblur="fun6()"></td>
+            <td><div id="ErrorEmail"></div></td>
+        </tr>
+
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" id="txtPassword" onblur="fun7()"></td>
+            <td><div id="ErrorPass"></div></td>
+        </tr>
+
+        <tr>
+            <td>Emp Id:</td>
+            <td><input type="text" id="txtEid" onblur="fun4()"></td>
+            <td><div id="ErrorEno"></div></td>
+        </tr>
+
         <tr>
             <td colspan="2">
-                <input type="submit" value="submit">
-                <input type="reset" value="reset">
-
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
             </td>
         </tr>
+
     </table>
-
-
-
-
 </form>
+
 </body>
 </html>
