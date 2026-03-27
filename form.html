@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        #ErrorFirst {
+            color: red;
+        }
+        #ErrorLast {
+             color: red;
+         }
+        #ErrorMiddle {
+            color: red;
+        }
+        #ErrorEno {
+            color: red;
+        }
+
+    </style>
+    <script>
+
+
+
+function Ckeck1()
+{
+    fname=document.getElementById("txtFirst").value;
+    if(fname=="")
+    {
+        //alert("Please enter first Name");
+        document.getElementById("ErrorFirst").innerHTML="Please enter first Name";
+        document.getElementById("txtFirst").focus();
+        return false;
+    }
+    else
+    {
+        document.getElementById("ErrorFirst").innerHTML="";
+    }
+    mname=document.getElementById("txtMiddle").value;
+    if(mname=="")
+    {
+        //alert("Please enter first Name");
+        document.getElementById("ErrorMiddle").innerHTML="Please enter Middle Name";
+        document.getElementById("txtMiddle").focus();
+        return false;
+    }
+    else
+    {
+        document.getElementById("ErrorMiddle").innerHTML="";
+    }
+    lname=document.getElementById("txtLast").value;
+
+    if(lname=="")
+    {
+        //alert("Please enter first Name");
+        document.getElementById("ErrorLast").innerHTML="Please enter Last Name";
+        document.getElementById("txtLast").focus();
+        return false;
+    }
+    else
+    {
+        document.getElementById("ErrorLast").innerHTML="";
+    }
+    empNo=document.getElementById("txtEid").value;
+    if(empNo=="")
+    {
+        //alert("Please enter first Name");
+        document.getElementById("ErrorEno").innerHTML="Please enter Employee id";
+        document.getElementById("txtEid").focus();
+        return false;
+    }
+    else
+    {
+        document.getElementById("ErrorEno").innerHTML="";
+    }
+}
+
+        function fun1()
+        {
+            fname=document.getElementById("txtFirst").value;
+            if(fname=="")
+            {
+                //alert("Please enter first Name");
+                document.getElementById("ErrorFirst").innerHTML="Please enter first Name";
+                document.getElementById("txtFirst").focus();
+            }
+            else
+            {
+                document.getElementById("ErrorFirst").innerHTML="";
+            }
+
+        }
+
+        function fun2()
+        {
+            mname=document.getElementById("txtMiddle").value;
+            if(mname=="")
+            {
+                //alert("Please enter first Name");
+                document.getElementById("ErrorMiddle").innerHTML="Please enter Middle Name";
+                document.getElementById("txtMiddle").focus();
+            }
+            else
+            {
+                document.getElementById("ErrorMiddle").innerHTML="";
+            }
+        }
+        function fun3()
+        {
+            lname=document.getElementById("txtLast").value;
+
+            if(lname=="")
+            {
+                //alert("Please enter first Name");
+                document.getElementById("ErrorLast").innerHTML="Please enter Last Name";
+                document.getElementById("txtLast").focus();
+            }
+            else
+            {
+                document.getElementById("ErrorLast").innerHTML="";
+            }
+        }
+        function fun4()
+        {
+            empNo=document.getElementById("txtEid").value;
+            if(empNo=="")
+            {
+                //alert("Please enter first Name");
+                document.getElementById("ErrorEno").innerHTML="Please enter Employee id";
+                document.getElementById("txtEid").focus();
+            }
+            else
+            {
+                document.getElementById("ErrorEno").innerHTML="";
+            }
+        }
+    </script>
+</head>
+<body>
+<form method="post" action="result.asp" onsubmit="return Ckeck1()">
+    <table style="border: 10px; background-color: rgb(148, 251, 237); border-radius: 20px; ">
+        <tr>
+            <td>
+                First Name:
+            </td>
+            <td><input type="text" id="txtFirst" onblur="fun1()">
+            </td>
+            <td>
+                <div id="ErrorFirst"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Middle Name:
+             </td>
+            <td><input type="text" id="txtMiddle" onblur="fun2()">
+            </td>
+            <td>
+                <div id="ErrorMiddle"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Last Name:
+            </td>
+            <td><input type="text" id="txtLast" onblur="fun3()">
+            </td>
+            <td>
+                <div id="ErrorLast"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Emp Id :
+            </td>
+            <td><input type="text" id="txtEid" onblur="fun4()">
+            </td>
+            <td>
+                <div id="ErrorEno" ></div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="submit">
+                <input type="reset" value="reset">
+
+            </td>
+        </tr>
+    </table>
+
+
+
+
+</form>
+</body>
+</html>
