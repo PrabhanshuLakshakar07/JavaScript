@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function fun(){
+            var fname=document.getElementById("fname").value;
+            //alert(fname)
+            var res = fname.match(/\d/);
+        //alert(res)
+        if(res>0){
+            alert("invalid fname");
+            document.getElementById("fname").focus();
+
+        }else if(res == null)
+        alert("valid fname");
+        
+        
+        }
+    </script                    
+</head>
+<body>
+    ENTER NAME <input type="text" id="fname"> <br/>
+    <button onclick="fun()">CLICK HERE</button>
+    
+</body>
+</html>
