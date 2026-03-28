@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input id="a" placeholder="Enter value">
+<button onclick="check()">Check</button>
+<p id="o"></p>
+
+<script>
+function check(){
+let s=document.getElementById("a").value;
+let res=/^[a-z0-9]+$/i.test(s);
+document.getElementById("o").innerHTML=
+res?"Alphanumeric":"Not Alphanumeric";
+}
+</script>
+
+</body>
+</html>

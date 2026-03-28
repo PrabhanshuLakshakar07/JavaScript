@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input id="w" placeholder="Enter sentence">
+<button onclick="count()">Count</button>
+<p id="c"></p>
+
+<script>
+function count(){
+let s=document.getElementById("w").value.trim();
+let n=s.split(/\s+/).length;
+document.getElementById("c").innerHTML="Words: "+n;
+}
+</script>
+
+</body>
+</html>

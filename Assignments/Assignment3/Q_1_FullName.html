@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+<input id="f" placeholder="First Name">
+<input id="l" placeholder="Last Name">
+<button onclick="show()">Show</button>
+<p id="out"></p>
+
+<script>
+function show(){
+let f=document.getElementById("f").value;
+let l=document.getElementById("l").value;
+document.getElementById("out").innerHTML=f+" "+l;
+}
+</script>
+</body>
+</html>

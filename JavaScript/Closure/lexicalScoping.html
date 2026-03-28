@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <script>
+        //lexical Scoping
+        var g=10; //globle
+        var result=function(b,c,x){
+            document.write("g is" + g + "<br/>");
+
+            var a=100; //local
+            return a+b+c+x+g;
+        }
+        document.write("g is " + g + "<br/>")
+        document.write(result(2,6,3));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

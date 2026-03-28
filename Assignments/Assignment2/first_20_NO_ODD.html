@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Odd Numbers</title>
+
+<style>
+body{text-align:center;font-family:Arial;}
+.box{border:2px solid #333;padding:20px;width:300px;margin:auto;}
+</style>
+
+<script>
+function showOdd(){
+let count=0, num=1, output="";
+
+if(true){   // using if condition
+while(count<20){
+output += num + " ";
+num += 2;
+count++;
+}
+}
+
+document.getElementById("result").innerHTML=output;
+}
+</script>
+
+</head>
+<body>
+
+<div class="box">
+<h3>First 20 Odd Numbers</h3>
+
+<button onclick="showOdd()">Show</button>
+
+<p id="result"></p>
+</div>
+
+</body>
+</html>
