@@ -1,12 +1,12 @@
 ﻿# JavaScript
  Q1.What are the possible ways to create objects in JavaScript?
-Q2.	What is a prototype chain
+Q2.	What is a prototype chain.
 Q3.	What is the Difference Between call, apply, and bind
 Q4.	What is JSON and its common operations
 5	What is the purpose of the array slice method
 6	What is the purpose of the array splice method
 7	What is the difference between slice and splice
-8	How do you compare Object and Map
+8	How do you compare Object and Map.
 9	What is the difference between == and === operators
 10	What are lambda expressions or arrow functions
 11	What is a first class function
